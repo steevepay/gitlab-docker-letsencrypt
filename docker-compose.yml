@@ -19,7 +19,6 @@ services:
       - VIRTUAL_PORT=${VIRTUAL_PORT}
       - VIRTUAL_HOST=${VIRTUAL_HOST}
       - LETSENCRYPT_HOST=${LETSENCRYPT_HOST}
-      - GITLAB_HOST=${VIRTUAL_HOST}
     networks:
       - default
 
