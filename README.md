@@ -1,4 +1,4 @@
-# Gitlab CE + Docker running with auto generate/renew Let's Encrypt Certificate
+# Gitlab CE + Docker Compose running with auto generate/renew Let's Encrypt Certificate
 
 With this repo you will be able to set up self hosted Gitlab CE as a container over SSL auto generated and auto renewed by a web proxy.
 
