@@ -11,9 +11,9 @@ services:
       - '3443:443'
       - '3022:22'
     volumes:
-      - './data/gitlab/config:/etc/gitlab'
-      - './data/gitlab/logs:/var/log/gitlab'
-      - './data/gitlab/data:/var/opt/gitlab'
+      - '/data/gitlab/config:/etc/gitlab'
+      - '/data/gitlab/logs:/var/log/gitlab'
+      - '/data/gitlab/data:/var/opt/gitlab'
     restart: unless-stopped
     environment:
       - VIRTUAL_PORT=${VIRTUAL_PORT}
