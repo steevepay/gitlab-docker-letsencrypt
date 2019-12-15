@@ -7,8 +7,8 @@ services:
     restart: always
     hostname: ${VIRTUAL_HOST}
     ports:
-      - '${VIRTUAL_PORT}:80'
-      - '3443:443'
+      # - '${VIRTUAL_PORT}:80'
+      # - '3443:443'
       - '3022:22'
     volumes:
       - '/data/gitlab/config:/etc/gitlab'
@@ -16,7 +16,7 @@ services:
       - '/data/gitlab/data:/var/opt/gitlab'
     restart: unless-stopped
     environment:
-      - VIRTUAL_PORT=${VIRTUAL_PORT}
+      # - VIRTUAL_PORT=${VIRTUAL_PORT}
       - VIRTUAL_HOST=${VIRTUAL_HOST}
       - LETSENCRYPT_HOST=${LETSENCRYPT_HOST}
     networks:
