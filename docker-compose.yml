@@ -1,12 +1,13 @@
 version: "3.7"
 
 services:
-  gitlab-loukoum:
+  gitlab-letsencrypt:
     image: 'gitlab/gitlab-ce:latest'
+    container_name: ${VIRTUAL_HOST}
     restart: always
     hostname: ${VIRTUAL_HOST}
     ports:
-      - '3080:80'
+      - '${VIRTUAL_PORT}:80'
       - '3443:443'
       - '3022:22'
     volumes:
@@ -15,6 +16,7 @@ services:
       - './data/gitlab/data:/var/opt/gitlab'
     restart: unless-stopped
     environment:
+      - VIRTUAL_PORT=${VIRTUAL_PORT}
       - VIRTUAL_HOST=${VIRTUAL_HOST}
       - LETSENCRYPT_HOST=${LETSENCRYPT_HOST}
       - GITLAB_HOST=${VIRTUAL_HOST}
