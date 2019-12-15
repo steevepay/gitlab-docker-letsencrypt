@@ -20,7 +20,6 @@ services:
       - VIRTUAL_HOST=${VIRTUAL_HOST}
       - LETSENCRYPT_HOST=${LETSENCRYPT_HOST}
       - GITLAB_HOST=${VIRTUAL_HOST}
-      - GITLAB_ROOT_PASSWORD=${GITLAB_ROOT_PASSWORD}
     networks:
       - default
 
