@@ -5,19 +5,14 @@ services:
     image: 'gitlab/gitlab-ce:latest'
     container_name: ${CONTAINER_NAME}
     restart: always
-    hostname: ${DOMAINS}
-    ports:
-      - '3443:443'
-      - '3022:22'
+    hostname: ${MAIN_DOMAIN}
     volumes:
       - '${GITLAB_DATA_PATH}config:/etc/gitlab'
       - '${GITLAB_DATA_PATH}logs:/var/log/gitlab'
       - '${GITLAB_DATA_PATH}data:/var/opt/gitlab'
     restart: unless-stopped
-    environment:
-      - VIRTUAL_HOST=${DOMAINS}
-      - LETSENCRYPT_HOST=${DOMAINS}
-      - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
+    env_file:
+      - ./.env
     networks:
       - default
 

@@ -99,3 +99,5 @@ public/
 .dynamodb/
 
 data
+
+.vscode
