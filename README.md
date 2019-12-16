@@ -75,7 +75,7 @@ $ docker-compose up -d
 
 ## Pre-configure Gitlab CE
 
- You can pre-configure the GitLab Docker image by adding the environment variable `GITLAB_OMNIBUS_CONFIG` to docker run command. This variable can contain any gitlab.rb setting and will be evaluated before loading the container’s gitlab.rb file. That way you can easily configure GitLab’s external URL, make any database configuration or any other option from the Omnibus GitLab template.
+ You can pre-configure the GitLab Docker image by adding the environment variable `GITLAB_OMNIBUS_CONFIG` to the docker-compose file. This variable can contain any gitlab.rb setting and will be evaluated before loading the container’s gitlab.rb file. That way you can easily configure GitLab’s external URL, make any database configuration or any other option from the Omnibus GitLab template.
 
  Here is an example of pre-configuring OVH STMP server for the gitlab:
 
