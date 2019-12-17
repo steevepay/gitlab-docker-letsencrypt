@@ -62,8 +62,13 @@ MAIN_DOMAIN=gitlab.domain.com
 #
 NETWORK=webproxy
 ```
+3. Validate and view the docker-compose configuration before starting.
 
-3. Start the container.
+```bash
+$ docker-compose config
+```
+
+4. Start the container.
 
 During the build time, the environment variables are injected into the image.
 
@@ -115,3 +120,5 @@ networks:
     external:
       name: ${NETWORK}
 ```
+
+For more options about configuring GitLab please check the [Omnibus GitLab documentation](https://docs.gitlab.com/omnibus/settings/configuration.html).
